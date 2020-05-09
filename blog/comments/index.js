@@ -29,18 +29,19 @@ app.post('/posts/:id/comments', async (req, res) => {
     data: {
       id: commentId,
       content,
-      post: req.params.id,
-    },
+      postId: req.params.id
+    }
   });
 
   res.status(201).send(comments);
 });
 
 app.post('/events', (req, res) => {
-  console.log('Received Event', req.body.type);
+  console.log('Event Received:', req.body.type);
+
   res.send({});
 });
 
 app.listen(4001, () => {
-  console.log('Listening on 4001: comments');
+  console.log('Listening on 4001');
 });
