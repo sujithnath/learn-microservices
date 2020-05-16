@@ -2,31 +2,31 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: event-bus-depl
+  name: comment-depl
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: event-bus
+      app: comment
   template:
     metadata:
       labels:
-        app: event-bus
+        app: comment
     spec:
       containers:
-        - name: event-bus
-          image: sujith/event-bus
+        - name: comment
+          image: sujith/comment
 ---
 # Cluster service
 apiVersion: v1
 kind: Service
 metadata:
-  name: event-bus-srv
+  name: comment-srv
 spec:
   selector:
-    app: event-bus
+    app: comment
   ports:
-    - name: event-bus
+    - name: comment
       protocol: TCP
       port: 4005
       targetPort: 4005
