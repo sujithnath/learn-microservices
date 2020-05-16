@@ -14,10 +14,8 @@ spec:
     spec:
       containers:
         - name: event-bus
-          image: sujith/event-bus
-
+          image: stephengrider/event-bus
 ---
-# Event cluster service
 apiVersion: v1
 kind: Service
 metadata:
