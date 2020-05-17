@@ -13,7 +13,7 @@
 
 ### Features
 
--
+- Auth Service
 
 ### Tech Stack used
 
